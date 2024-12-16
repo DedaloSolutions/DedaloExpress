@@ -16,7 +16,7 @@ export default class Router {
        * This means the `next` function will not trigger any additional middleware in the stack when called.
        * @param errorHandler A function to handle errors, taking `req`, `res`, `next`, and `exception` as arguments.
        */
-    use(errorHandler: (req: Request, res: Response, next: NextFunction, exception: unknown) => void): void;
+    use(errorHandler: (exception: unknown, req: Request, res: Response, next: NextFunction) => void): void;
     /**
      * Register a stack for every HTTP method and URL
      * @param handlers The stack of handlers

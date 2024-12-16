@@ -435,7 +435,7 @@ const app = express();
 
 // Override the default error handler
 app.use(
-   (req: Request, res: Response, next: NextFunction, err: unknown) => {
+   (err: unknown, req: Request, res: Response, next: NextFunction) => {
       console.error('Custom error handling:', err.message);
 
       // You can modify the response as needed
