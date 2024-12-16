@@ -1,7 +1,5 @@
 import { ServerResponse } from 'http';
 import Application from './application.class';
-export declare class Responses<T = Record<string, any>> extends ServerResponse {
-}
 export default class Response<ResBody = any, Locals extends Record<string, any> = Record<string, any>> extends ServerResponse {
     app: Application;
     locals: Locals;
@@ -31,7 +29,7 @@ export default class Response<ResBody = any, Locals extends Record<string, any> 
      * @param body - The JSON object to send.
      * @returns The current response instance for method chaining.
      */
-    json(body: any): this;
+    json(body: ResBody): this;
     /**
      * Encodes a query string response.
      * This method encodes the provided `body` as a query string.
@@ -39,7 +37,7 @@ export default class Response<ResBody = any, Locals extends Record<string, any> 
      * @param body - The query parameters to encode.
      * @returns The current response instance for method chaining.
      */
-    query(body: any): this;
+    query(body: ResBody): this;
     /**
      * Redirects the client to the specified URL with an optional status code.
      * Defaults to a `302 Found` status if no code is provided.
