@@ -18,7 +18,7 @@ export default class Response<ResBody = any, Locals extends Record<string, any> 
      * @param value - The value of the header.
      * @returns The current response instance for method chaining.
      */
-    setHeader(field: string, value: string | number | readonly string[]): this;
+    set(field: string, value: string | number | readonly string[]): this;
     /**
      * Sends a response with the specified body and optional status code.
      * @param body - The response body.
