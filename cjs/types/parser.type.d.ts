@@ -1,5 +1,5 @@
-import Request from "./request.type";
-import Response from "./response.type";
+import Request from "../classes/request.class";
+import Response from "../classes/response.class";
 /**
  * Represents a parser for request and response handling.
  *

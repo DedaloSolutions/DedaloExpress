@@ -1,14 +1,14 @@
-import Express from "./express.class";
+import Application from "./application.class";
 import Handler from "../types/handler.type";
 import Method from "../types/method.type";
 import Middleware from "../types/middleware.type";
-import Request from "../types/request.type";
-import Response from "../types/response.type";
+import Request from "./request.class";
+import Response from "./response.class";
 import NextFunction from "../types/next-function.type";
 export default class Router {
     protected middlewares: Middleware[];
     protected expressRef: {
-        express?: Express;
+        express?: Application;
     };
     /**
        * Registers a custom error handler, replacing the existing one.
