@@ -62,6 +62,16 @@ export default class Request<P = any, ResBody = any, ReqBody = any, ReqQuery = P
      */
     get(name: string): string | undefined;
     /**
+     * Sets the value of a specific HTTP header in the request.
+     *
+     * If the header already exists, its value will be overwritten.
+     * The header name is case-insensitive.
+     *
+     * @param name - The name of the header to set (case-insensitive).
+     * @param value - The value to assign to the header.
+     */
+    set(name: string, value: string): void;
+    /**
      * Checks if the Content-Type header matches the specified MIME type.
      *
      * @param type - The MIME type to check against (e.g., 'application/json').
