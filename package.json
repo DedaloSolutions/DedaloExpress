@@ -1,5 +1,5 @@
 {
-  "name": "express",
+  "name": "@dedalosolutions/express",
   "version": "0.0.1",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
@@ -31,7 +31,7 @@
     "http server"
   ],
   "author": "Elia Ravera",
-  "license": "UNLICENSED",
+  "license": "CUSTOM",
   "description": "A lightweight framework inspired by Express, designed to simplify the creation and management of APIs.",
   "devDependencies": {
     "@types/jest": "^29.5.14",
@@ -61,5 +61,6 @@
   "bugs": {
     "url": "https://github.com/DedaloSolutions/DedaloExpress/issues"
   },
-  "homepage": "https://github.com/DedaloSolutions/DedaloExpress#readme"
+  "homepage": "https://github.com/DedaloSolutions/DedaloExpress#readme",
+  "files": ["dist"]
 }
