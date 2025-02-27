@@ -1,5 +1,5 @@
 {
-  "name": "@dedalosolutions/express",
+  "name": "express",
   "version": "0.0.1",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
@@ -16,7 +16,7 @@
     "compile:cjs": "tsc --project tsconfig.cjs.json",
     "obfuscate": "javascript-obfuscator dist -o dist --target node",
     "build": "npm run lint && npm run test && npm run compile && npm run obfuscate",
-    "publish": "npm run build && ts-node ./ci/deploy/index.ts"
+    "publish": "ts-node ./ci/deploy/index.ts"
   },
   "keywords": [
     "express",
@@ -62,5 +62,7 @@
     "url": "https://github.com/DedaloSolutions/DedaloExpress/issues"
   },
   "homepage": "https://github.com/DedaloSolutions/DedaloExpress#readme",
-  "files": ["dist"]
+  "publishConfig": {
+    "directory": "dist"
+  }
 }
