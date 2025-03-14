@@ -60,7 +60,7 @@ export default class Router {
      * @param res The outgoing HTTP response
      * @returns False if the handling shouldn't continue, otherwise true
      */
-    protected handle(req: Request, res: Response): Promise<boolean>;
+    protected _handle(req: Request, res: Response): Promise<boolean>;
     /**
      * Registers a stack for a GET request for every url
      * @param handlers The stack of handlers
