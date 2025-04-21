@@ -241,12 +241,14 @@ console.log('Server is running on http://localhost:3000');
 
 Since the routing follows a ‘first match, then proceed’ approach, we recommend placing the global CORS handler at the end of your middleware stack to ensure it applies to all routes.
 
-The CORS options are defined as follows:
-- **origin**: A string or an array of strings specifying which domains are allowed to access the resources. For example, 'http://example.com' or ['http://example.com', 'http://anotherdomain.com'].
-- **methods**: A string or an array of HTTP methods (e.g., GET, POST, PUT) that are allowed for cross-origin requests.
-- **allowedHeaders**: A string or array of HTTP headers that can be used when making the actual request (e.g., Content-Type, Authorization).
-- **credentials**: A boolean indicating whether to allow sending cookies or authorization headers with the request.
-- **maxAge**: An integer indicating how long the results of a preflight request can be cached by the browser (in seconds).
+The CORS options are configured as follows:
+- **origin**: Specifies the allowed origin(s) for cross-origin requests. It can be a string or an array of strings (e.g., 'http://example.com' or [ 'http://example.com', 'http://anotherdomain.com' ]). By default, all origins are permitted.
+- **methods**: Defines the HTTP methods allowed for cross-origin requests. Accepts a string or an array (e.g., 'GET', [ 'GET', 'POST', 'PUT' ]). The OPTIONS method is always enabled automatically, even if not explicitly listed.
+- **allowedHeaders**: Lists the HTTP headers permitted in actual requests. Accepts a string or an array (e.g., 'Content-Type', [ 'Content-Type', 'Authorization' ]). By default, the allowed headers are 'Origin, X-Requested-With, Content-Type, Accept, Authorization'.
+- **credentials**: A boolean that determines whether cookies and authorization headers can be included in cross-origin requests. When set to true, one or more specific origins must be defined—wildcards are not allowed.
+- **maxAge**: Indicates the duration (in seconds) for which the results of preflight requests can be cached by the browser.
+
+The Cors decorator will be applied to all the methods specified in the allowedHeaders. For instance, if two routes share the same URL but have different HTTP methods, the Cors decorator will only need to be applied to one of those routes, as long as the method is allowed in the configuration.
 
 You can customize the CORS options according to your application’s needs to control cross-origin access effectively.
 
