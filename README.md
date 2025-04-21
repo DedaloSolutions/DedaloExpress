@@ -200,12 +200,12 @@ The framework provides an easy way to configure CORS using either the static `co
 Here's how to use the built-in CORS middleware:
 
 ```typescript
-import express from 'express';
+import express, { Application } from 'express';
 
 const app = express();
 
 // Define a route that will be accessible from the specified domain
-const corsMiddleware = Express.cors({ origin: 'http://example.com' });
+const corsMiddleware = Application.cors({ origin: 'http://example.com' });
 
 // Define a route for a OPTIONS request to the url
 app.use('OPTIONS', '/data', corsMiddleware);

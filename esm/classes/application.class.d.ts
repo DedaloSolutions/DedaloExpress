@@ -61,13 +61,13 @@ export default class Application extends Router {
      * @param options The configuration options for CORS. These options control various aspects of the CORS behavior
      *                for the specified endpoint:
      *                - `origin`: Defines the allowed origins for cross-origin requests. This can be a single origin (string) or
-     *                            an array of origins. If not specified, the default behavior is to allow all origins.
+     *                            an array of origins. If not specified, the default behavior is to allow all origins (*).
      *                - `methods`: Specifies which HTTP methods are allowed for the CORS request. This can be a single method (string)
      *                             or an array of methods (e.g., `['GET', 'POST']`). The default is to allow all methods.
      *                - `allowedHeaders`: Defines the request headers that are allowed in the CORS request. This can be a single header
      *                                    (string) or an array of headers (e.g., `['Content-Type', 'Authorization']`).
-     *                                    If not specified, all headers are allowed.
-     *                - `credentials`: If set to `true`, the browser will include credentials (such as cookies or HTTP authentication)
+     *                                    If not specified, all request headers or the default are allowed.
+     *                - `credentials`: If a specific origin is specified and it's set to `true`, the browser will include credentials (such as cookies or HTTP authentication)
      *                                 with the request. By default, credentials are not included (false).
      *                - `maxAge`: Specifies the maximum duration (in seconds) that the browser should cache the CORS response for
      *                            preflight requests. This helps to reduce the number of preflight requests made by the browser.
