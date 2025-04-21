@@ -76,7 +76,7 @@ export default class Application extends Router {
      * @returns A handler function that applies the CORS headers to preflight requests and continues the request
      *          stack for other methods.
      */
-    static cors(options: CorsOption): Handler;
+    static cors(options?: CorsOption): Handler;
     /**
      * Creates a middleware function that serves static files from a specified directory.
      *
